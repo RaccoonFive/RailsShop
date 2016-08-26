@@ -13,3 +13,15 @@
  *= require_tree .
  *= require_self
  */
+
+@import "materialize";
+
+body{
+  background-color: #4FA1C8;
+}
+.card .card-action a:not(.btn):not(.btn-large):not(.btn-floating) {
+  color: #FF8900;
+}
+.hidden{
+  opacity: 0;
+}
