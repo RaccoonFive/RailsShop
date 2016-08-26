@@ -1,0 +1,22 @@
+<div class="form">
+  <div class="container">
+    <div class="row">
+    <h1>Sign up</h1>
+    <%= form_for :user, url: users_path do |f| %>
+      <div class="input-field col s12">
+        <%= f.label :username %>
+        <%= f.text_field :username %>
+      </div>
+      <div class="input-field col s12">
+        <%= f.label :password %>
+        <%= f.password_field :password %>
+      </div>
+      <div class="input-field col s12">
+        <%= button_tag(class: "btn waves-effect waves-light", type: "submit") do %>
+          Submit <i class="material-icons right">send</i>
+        <% end %>
+      </div>
+    <% end %>
+    </div>
+  </div>
+</div>
