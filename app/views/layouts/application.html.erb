@@ -14,8 +14,14 @@
       <div class="nav-wrapper light-blue lighten-1">
         <ul id="nav-mobile" class="left">
           <li class="active"><%= link_to "Home", root_path %></li>
-          <li><%= link_to "Sign Up", new_user_path %></li>
-          <li><a href="#">JavaScript</a></li>
+          <% if !user_logged %>
+            <li><%= link_to "Sign Up", new_user_path %></li>
+            <li><%= link_to "Login", new_session_path %></li>
+          <% else %>
+            <li><%= link_to "My Account", "#" %></li>
+            <li><%= link_to "Logout", logout_path %></li>
+          <% end %>
+
         </ul>
       </div>
     </nav>
