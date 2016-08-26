@@ -1,0 +1,22 @@
+<div class="form">
+  <div class="container">
+    <div class="row">
+    <h1>New Item</h1>
+    <%= form_for :item, url: items_path do |f| %>
+      <div class="input-field col s12">
+        <%= f.label :title %>
+        <%= f.text_field :title %>
+      </div>
+      <div class="input-field col s12">
+        <%= f.label :content %>
+        <%= f.text_field :content %>
+      </div>
+      <div class="input-field col s12">
+        <%= button_tag(class: "btn waves-effect waves-light", type: "submit") do %>
+          Submit <i class="material-icons right">send</i>
+        <% end %>
+      </div>
+    <% end %>
+    </div>
+  </div>
+</div>
