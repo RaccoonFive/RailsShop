@@ -3,7 +3,7 @@ Rails.application.routes.draw do
   resources :users
   resources :items
   resources :sessions
-
+  
   root "items#index"
   get '/logout', to: "sessions#logout"
 end
