@@ -23,7 +23,9 @@
             <li><%= link_to "My Account", user_path(session[:user][0]['id']) %></li>
             <li><%= link_to "Logout", logout_path %></li>
           <% end %>
-
+        </ul>
+        <ul class="right hide-on-med-and-down">
+          <li><a href="sass.html"><i class="material-icons left">search</i>Search for an item</a></li>          
         </ul>
       </div>
     </nav>
