@@ -1,10 +1,17 @@
+<div class="headerItems">
+  <div class="container">
+      <span class="iconHeader"><i class="medium material-icons">shop</i></span>
+      <h1>Rails Shop</h1>
+  </div>
+</div>
+
 <div class="container">
   <div class="row">
     <% @items.each do |item| %>
-      <div class="col s4">
+      <div class="col s12 m12 l4">
         <div class="card">
           <div class="card-image">
-            <%= image_tag item.image.url %>
+            <%= image_tag item.image.url(:itemSize) %>
             <span class="card-title"><a href="#" style="color: inherit"><%= item.title %></a></span>
           </div>
           <div class="card-content">
