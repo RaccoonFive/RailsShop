@@ -1,0 +1,25 @@
+<div class="headerItems">
+  <div class="container">
+      <span class="iconHeader"><i class="medium material-icons">perm_identity</i></span>
+      <% username = @user.username %>
+      <% username[0] = username[0].capitalize %>
+      <h1><%= username %></h1>
+  </div>
+</div>
+<div class="container">
+  <div class="row">
+    <% @items.each do |item| %>
+      <div class="col s12 m12 l4">
+        <div class="card">
+          <div class="card-image">
+            <%= image_tag item.image.url(:itemSize) %>
+            <span class="card-title"><a href="#" style="color: inherit"><%= item.title %></a></span>
+          </div>
+          <div class="card-content">
+            <p><%= item.content %></p><a href="#">Edit</a>
+          </div>
+        </div>
+      </div>
+    <% end %>
+  </div>
+</div>

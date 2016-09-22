@@ -14,6 +14,11 @@ class UsersController < ApplicationController
     @items = @user.items
   end
 
+  def myaccount
+    @user = User.find(session[:user][0]['id'])
+    @items = @user.items    
+  end
+
   private
   def user_params
     params.require(:user).permit(:username, :password)
