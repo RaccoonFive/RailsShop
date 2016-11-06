@@ -1,0 +1,27 @@
+<div class="headerItems">
+  <div class="container">
+      <span class="iconHeader"><i class="medium material-icons">shop</i></span>
+      <h1>Rails Shop</h1>
+  </div>
+</div>
+
+<div class="container">
+  <div class="row">
+    <% @items.each do |item| %>
+      <div class="col s12 m12 l4">
+        <div class="card z-depth-3">
+          <div class="card-image">
+            <%= image_tag item.image.url(:itemSize) %>
+            <span class="card-title"><a href="#" style="color: inherit"><%= item.title %></a></span>
+          </div>
+          <div class="card-content">
+            <p><%= item.content %></p>
+          </div>
+          <div class="card-action">
+            <%= link_to item.user.username, item.user %>
+          </div>
+        </div>
+      </div>
+    <% end %>
+  </div>
+</div>
