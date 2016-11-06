@@ -15,6 +15,11 @@ class ItemsController < ApplicationController
     end
   end
 
+  def destroy
+    Item.find(params[:id]).destroy
+    redirect_to myaccount_path
+  end
+
   def search
     @items = Item.where("title LIKE :query1 OR content LIKE :query2",
       query1: "%#{params[:q]}%",

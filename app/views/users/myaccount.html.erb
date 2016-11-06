@@ -16,7 +16,10 @@
             <span class="card-title"><a href="#" style="color: inherit"><%= item.title %></a></span>
           </div>
           <div class="card-content">
-            <p><%= item.content %></p><a href="#">Edit</a>
+            <p><%= item.content %></p>
+            <a href="#">Edit</a>
+            <br />
+            <%= link_to "Delete", item, method: :delete, style: "color: red;", data: {confirm: "Are you sure?"} %>
           </div>
         </div>
       </div>
