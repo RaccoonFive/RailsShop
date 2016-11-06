@@ -15,6 +15,12 @@ class ItemsController < ApplicationController
     end
   end
 
+  def search
+    @items = Item.where("title LIKE :query1 OR content LIKE :query2",
+      query1: "%#{params[:q]}%",
+      query2: "%#{params[:q]}%")
+  end
+
   private
   def item_params
     params.require(:item).permit(:title, :content, :image)

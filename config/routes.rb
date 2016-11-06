@@ -7,4 +7,7 @@ Rails.application.routes.draw do
   root "items#index"
   get '/logout', to: "sessions#logout"
   get '/myaccount', to: "users#myaccount"
+
+  get '/search', to: "items#index"
+  post '/search', to: "items#search"
 end

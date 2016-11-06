@@ -25,10 +25,28 @@
           <% end %>
         </ul>
         <ul class="right">
-          <li><a href="sass.html"><i class="material-icons left">search</i>Search for an item</a></li>
+          <li><a href="#searchModal"><i class="material-icons left">search</i>Search for an item</a></li>
         </ul>
       </div>
     </nav>
+    <!-- Search Modal -->
+    <div id="searchModal" class="modal">
+      <div class="modal-content">
+        <h4>Search for an item</h4>
+        <%= form_tag('/search', method: "post") do %>
+          <%= text_field_tag(:q) %>
+          <%= button_tag(class: "btn waves-effect waves-light", type: "submit") do %>
+            Search <i class="material-icons left">search</i>
+          <% end %>
+        <% end %>
+      </div>
+    </div>
     <%= yield %>
   </body>
+  <script>
+    $(document).ready(function(){
+      // the "href" attribute of .modal-trigger must specify the modal ID that wants to be triggered
+      $('.modal').modal();
+    });
+  </script>
 </html>
