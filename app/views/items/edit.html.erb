@@ -1,0 +1,39 @@
+<div class="headerItems">
+  <div class="container">
+      <span class="iconHeader"><i class="medium material-icons">shop</i></span>
+      <h1>Rails Shop</h1>
+  </div>
+</div>
+<div class="form">
+  <div class="container">
+    <div class="row">
+    <h1>New Item</h1>
+    <%= form_for @item, html: {multipart: true} do |f| %>
+      <div class="input-field col s12">
+        <%= f.label :title %>
+        <%= f.text_field :title %>
+      </div>
+      <div class="input-field col s12">
+        <%= f.label :content %>
+        <%= f.text_field :content %>
+      </div>
+      <div class="col s12">
+        <div class="file-field input-field">
+          <div class="btn">
+            <span>File</span>
+            <%= f.file_field :image %>
+          </div>
+          <div class="file-path-wrapper">
+            <input class="file-path validate" type="text" placeholder="Upload one or more files">
+          </div>
+        </div>
+      </div>
+      <div class="input-field col s12">
+        <%= button_tag(class: "btn waves-effect waves-light", type: "submit") do %>
+          Submit <i class="material-icons right">send</i>
+        <% end %>
+      </div>
+    <% end %>
+    </div>
+  </div>
+</div>

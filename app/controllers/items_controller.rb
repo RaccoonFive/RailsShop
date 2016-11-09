@@ -15,6 +15,17 @@ class ItemsController < ApplicationController
     end
   end
 
+  def edit
+    @item = Item.find(params[:id])
+  end
+
+  def update
+    @item = Item.find(params[:id])
+    @item.update(item_params)
+    @item.save
+    redirect_to myaccount_path
+  end
+
   def destroy
     Item.find(params[:id]).destroy
     redirect_to myaccount_path

@@ -17,7 +17,7 @@
           </div>
           <div class="card-content">
             <p><%= item.content %></p>
-            <a href="#">Edit</a>
+            <%= link_to "Edit", edit_item_path(item) %>
             <br />
             <%= link_to "Delete", item, method: :delete, style: "color: red;", data: {confirm: "Are you sure?"} %>
           </div>
